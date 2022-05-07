@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: nlw_return
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 421728
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
